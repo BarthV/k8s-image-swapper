@@ -29,6 +29,7 @@ const (
 	ImageCopyPolicyDelayed = iota
 	ImageCopyPolicyImmediate
 	ImageCopyPolicyForce
+	ImageCopyPolicyNever
 )
 
 func (p ImageCopyPolicy) String() string {
@@ -43,6 +44,8 @@ func ParseImageCopyPolicy(p string) (ImageCopyPolicy, error) {
 		return ImageCopyPolicyImmediate, nil
 	case ImageCopyPolicy(ImageCopyPolicyForce).String():
 		return ImageCopyPolicyForce, nil
+	case ImageCopyPolicy(ImageCopyPolicyNever).String():
+		return ImageCopyPolicyNever, nil
 	}
 	return ImageCopyPolicyDelayed, fmt.Errorf("unknown image copy policy string: '%s', defaulting to delayed", p)
 }

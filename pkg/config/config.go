@@ -33,7 +33,7 @@ type Config struct {
 
 	DryRun          bool   `yaml:"dryRun"`
 	ImageSwapPolicy string `yaml:"imageSwapPolicy" validate:"oneof=always exists"`
-	ImageCopyPolicy string `yaml:"imageCopyPolicy" validate:"oneof=delayed immediate force"`
+	ImageCopyPolicy string `yaml:"imageCopyPolicy" validate:"oneof=delayed immediate force never"`
 	Source          Source `yaml:"source"`
 	Target          Target `yaml:"target"`
 

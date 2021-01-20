@@ -40,6 +40,7 @@ The option `imageCopyPolicy` (default: `delayed`) defines the image copy strateg
 * `delayed`: Submits the copy job to a process queue and moves on.
 * `immediate`: Submits the copy job to a process queue and waits for it to finish (deadline 8s).
 * `force`: Attempts to immediately copy the image (deadline 8s).
+* `never`: Never tries to copy the remote image, an external sync process must handle this part.
 
 
 
